@@ -60,6 +60,10 @@ namespace NotMario.Physics.Basics
 		public void Draw(SpriteBatch batch){
 			batch.Draw (this.texture, this.position);
 		}
+
+		public void Dispose(){
+			this.texture.Dispose ();
+		}
 	}
 }
 

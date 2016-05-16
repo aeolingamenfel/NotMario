@@ -81,6 +81,12 @@ namespace NotMario
 
 		}
 
+		protected override void UnloadContent(){
+			rect.Dispose ();
+
+			Content.Unload ();
+		}
+
 		/// <summary>
 		/// This is called when the game should draw itself.
 		/// </summary>
