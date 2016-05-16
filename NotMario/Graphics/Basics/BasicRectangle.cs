@@ -18,6 +18,28 @@ namespace NotMario.Graphics.Basics
 			this.buildColor (Color.Red);
 		}
 
+		public BasicRectangle (Color color, GraphicsDevice graphics)
+		{
+			this.position = new Vector2 (10.0F, 10.0F);
+			this.texture = new Texture2D (graphics, 10, 10);
+
+			this.buildColor (color);
+		}
+
+		public BasicRectangle (float x, float y, int width, int height, GraphicsDevice graphics){
+			this.position = new Vector2 (x, y);
+			this.texture = new Texture2D (graphics, width, height);
+
+			this.buildColor (Color.Red);
+		}
+
+		public BasicRectangle (float x, float y, int width, int height, Color color, GraphicsDevice graphics){
+			this.position = new Vector2 (x, y);
+			this.texture = new Texture2D (graphics, width, height);
+
+			this.buildColor (color);
+		}
+
 		protected void buildColor(Color color){
 			int x = this.texture.Bounds.Height;
 			int y = this.texture.Bounds.Width;

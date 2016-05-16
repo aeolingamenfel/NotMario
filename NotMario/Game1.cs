@@ -32,7 +32,7 @@ namespace NotMario
 		/// </summary>
 		protected override void Initialize ()
 		{
-			rect = new BasicRectangle (this.GraphicsDevice);
+			rect = new BasicRectangle (Color.Purple, this.GraphicsDevice);
             
 			base.Initialize ();
 		}
