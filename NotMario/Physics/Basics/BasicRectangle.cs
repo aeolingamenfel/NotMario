@@ -1,39 +1,42 @@
 ﻿using System;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace NotMario.Graphics.Basics
+using NotMario.Physics.Basics;
+
+namespace NotMario.Physics.Basics
 {
-	public class BasicRectangle
+	public class BasicRectangle : PhysicsObject
 	{
 		protected Texture2D texture;
 
-		public Vector2 position;
-
-		public BasicRectangle (GraphicsDevice graphics)
-		{
+		public BasicRectangle (GraphicsDevice graphics) 
+			: base(){
 			this.position = new Vector2 (10.0F, 10.0F);
 			this.texture = new Texture2D (graphics, 10, 10);
 
 			this.buildColor (Color.Red);
 		}
 
-		public BasicRectangle (Color color, GraphicsDevice graphics)
-		{
+		public BasicRectangle (Color color, GraphicsDevice graphics) 
+			: base(){
 			this.position = new Vector2 (10.0F, 10.0F);
 			this.texture = new Texture2D (graphics, 10, 10);
 
 			this.buildColor (color);
 		}
 
-		public BasicRectangle (float x, float y, int width, int height, GraphicsDevice graphics){
+		public BasicRectangle (float x, float y, int width, int height, GraphicsDevice graphics) 
+			: base(){
 			this.position = new Vector2 (x, y);
 			this.texture = new Texture2D (graphics, width, height);
 
 			this.buildColor (Color.Red);
 		}
 
-		public BasicRectangle (float x, float y, int width, int height, Color color, GraphicsDevice graphics){
+		public BasicRectangle (float x, float y, int width, int height, Color color, GraphicsDevice graphics) 
+			: base(){
 			this.position = new Vector2 (x, y);
 			this.texture = new Texture2D (graphics, width, height);
 

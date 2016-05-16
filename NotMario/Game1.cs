@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 
-using NotMario.Graphics.Basics;
+using NotMario.Physics.Basics;
 
 namespace NotMario
 {
@@ -22,6 +22,9 @@ namespace NotMario
 		{
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";
+
+			this.IsFixedTimeStep = false;
+			this.graphics.SynchronizeWithVerticalRetrace = false;
 		}
 
 		/// <summary>
@@ -33,6 +36,9 @@ namespace NotMario
 		protected override void Initialize ()
 		{
 			rect = new BasicRectangle (Color.Purple, this.GraphicsDevice);
+
+			// Setup
+			rect.speed.X = 2.0f;
             
 			base.Initialize ();
 		}
@@ -68,7 +74,7 @@ namespace NotMario
 				#endif
             
 				// Move the rectangle right slowly
-				rect.position.X += 0.5f;
+				rect.Update(gameTime);
 
 				base.Update (gameTime);
 			}
