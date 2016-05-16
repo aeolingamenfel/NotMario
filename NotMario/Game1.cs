@@ -38,7 +38,9 @@ namespace NotMario
 			rect = new BasicRectangle (Color.Purple, this.GraphicsDevice);
 
 			// Setup
-			rect.speed.X = 2.0f;
+			rect.speed.X = 5f;
+			rect.speed.Y = 5f;
+			rect.rotationSpeed = 1f;
             
 			base.Initialize ();
 		}

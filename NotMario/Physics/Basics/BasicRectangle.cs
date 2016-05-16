@@ -12,7 +12,7 @@ namespace NotMario.Physics.Basics
 		protected Texture2D texture;
 
 		public BasicRectangle (GraphicsDevice graphics) 
-			: base(){
+			: base(10, 10){
 			this.position = new Vector2 (10.0F, 10.0F);
 			this.texture = new Texture2D (graphics, 10, 10);
 
@@ -20,7 +20,7 @@ namespace NotMario.Physics.Basics
 		}
 
 		public BasicRectangle (Color color, GraphicsDevice graphics) 
-			: base(){
+			: base(10, 10){
 			this.position = new Vector2 (10.0F, 10.0F);
 			this.texture = new Texture2D (graphics, 10, 10);
 
@@ -28,7 +28,7 @@ namespace NotMario.Physics.Basics
 		}
 
 		public BasicRectangle (float x, float y, int width, int height, GraphicsDevice graphics) 
-			: base(){
+			: base(width, height){
 			this.position = new Vector2 (x, y);
 			this.texture = new Texture2D (graphics, width, height);
 
@@ -36,7 +36,7 @@ namespace NotMario.Physics.Basics
 		}
 
 		public BasicRectangle (float x, float y, int width, int height, Color color, GraphicsDevice graphics) 
-			: base(){
+			: base(width, height){
 			this.position = new Vector2 (x, y);
 			this.texture = new Texture2D (graphics, width, height);
 
@@ -58,7 +58,7 @@ namespace NotMario.Physics.Basics
 		}
 
 		public void Draw(SpriteBatch batch){
-			batch.Draw (this.texture, this.position);
+			batch.Draw (this.texture, destinationRectangle: this.drawRect, rotation: this.rotation);
 		}
 
 		public void Dispose(){
