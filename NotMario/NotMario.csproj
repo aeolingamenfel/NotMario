@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
