@@ -19,7 +19,7 @@ namespace NotMario
 		{
 			NSApplication.Init ();
 
-			using (var game = new Game1 ()) {
+			using (var game = new NotMarioGame ()) {
 				game.Run ();
 			}
 		}

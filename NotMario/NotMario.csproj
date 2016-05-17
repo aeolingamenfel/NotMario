@@ -65,11 +65,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Physics\PhysicsObject.cs" />
     <Compile Include="Physics\Basics\BasicRectangle.cs" />
+    <Compile Include="NotMarioGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
