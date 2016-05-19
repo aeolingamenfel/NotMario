@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Content;
 using NotMario.Physics.Basics;
 using NotMario.Game.Levels;
 using NotMario.Utility;
+using NotMario.Factories;
 
 namespace NotMario
 {
@@ -45,7 +46,7 @@ namespace NotMario
 		protected override void Initialize ()
 		{
 			// File reader test
-			Level loadedLevel = LevelFactory.loadLevel(this.currentLevelName);
+			Level loadedLevel = LevelFactory.loadLevel(this.currentLevelName, this.GraphicsDevice);
 
 			Console.WriteLine ("Name: " + loadedLevel.name);
 

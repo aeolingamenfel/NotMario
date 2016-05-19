@@ -1,8 +1,11 @@
 ﻿using System;
 
-using NotMario.Utility;
+using Microsoft.Xna.Framework.Graphics;
 
-namespace NotMario.Game.Levels
+using NotMario.Utility;
+using NotMario.Game.Levels;
+
+namespace NotMario.Factories
 {
 	public class LevelFactory
 	{
@@ -17,7 +20,7 @@ namespace NotMario.Game.Levels
 		/// </summary>
 		/// <returns>The level.</returns>
 		/// <param name="levelName">Level name.</param>
-		public static Level loadLevel(string levelName){
+		public static Level loadLevel(string levelName, GraphicsDevice graphics){
 			XMLLiteNode nameNode;
 			XMLLiteNode blocksNode;
 

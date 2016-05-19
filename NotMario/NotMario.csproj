@@ -74,7 +74,8 @@
     <Compile Include="Utility\XMLLiteNode.cs" />
     <Compile Include="Game\Levels\Level.cs" />
     <Compile Include="Game\Elements\GameObject.cs" />
-    <Compile Include="Game\Levels\LevelFactory.cs" />
+    <Compile Include="Factories\LevelFactory.cs" />
+    <Compile Include="Factories\BlockFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
@@ -101,5 +102,6 @@
     <Folder Include="Game\" />
     <Folder Include="Game\Levels\" />
     <Folder Include="Game\Elements\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
 </Project>
