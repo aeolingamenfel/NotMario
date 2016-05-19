@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Microsoft.Xna.Framework.Graphics;
 
 using NotMario.Utility;
+using NotMario.Game.Elements;
 using NotMario.Game.Levels;
+using NotMario.Physics.Basics;
 
 namespace NotMario.Factories
 {
@@ -35,8 +38,34 @@ namespace NotMario.Factories
 			}
 
 			// Load Blocks
-			if (reader.data.TryGetValue ("blocks", out blocksNode)) {
+			if (reader.data.TryGetValue ("objects", out blocksNode)) {
+				List<XMLLiteNode> objectNodes = blocksNode.lists ["object"];
 
+				IEnumerator<XMLLiteNode> enumerator = objectNodes.GetEnumerator ();
+
+				while (enumerator.MoveNext ()) {
+					Console.WriteLine ("Something");
+
+					XMLLiteNode currentObjectNode = enumerator.Current;
+					GameObject currentObject = null;
+					string type;
+
+					if (currentObjectNode.attributes.TryGetValue ("type", out type)) {
+						switch (type) {
+						case "block":
+							currentObject = BlockFactory.BuildBlockFromNode (currentObjectNode, graphics);
+							break;
+						default:
+							Console.WriteLine("WARNING: unrecognized object type \"" + type + "\"");
+							break;
+						}
+					} else {
+						Console.WriteLine ("Ignoring object; no type supplied.");
+					}
+
+					if (currentObject != null)
+						output.addObject (currentObject);
+				}
 			}
 
 			return output;

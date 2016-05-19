@@ -48,14 +48,8 @@ namespace NotMario
 			// File reader test
 			Level loadedLevel = LevelFactory.loadLevel(this.currentLevelName, this.GraphicsDevice);
 
-			Console.WriteLine ("Name: " + loadedLevel.name);
-
 			// Setup
-			currentLevel = new Level ();
-
-			Block rect = new Block (Color.Purple, this.GraphicsDevice);
-
-			currentLevel.addObject (rect);
+			currentLevel = loadedLevel;
             
 			base.Initialize ();
 		}

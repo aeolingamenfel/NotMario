@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Microsoft.Xna.Framework.Graphics;
 
@@ -11,7 +12,7 @@ namespace NotMario.Factories
 	{
 		private BlockFactory (){ }
 
-		public Block BuildBlockFromNode(XMLLiteNode node, GraphicsDevice graphics){
+		public static Block BuildBlockFromNode(XMLLiteNode node, GraphicsDevice graphics){
 			Block output = new Block (graphics);
 
 			// TODO: extra building
