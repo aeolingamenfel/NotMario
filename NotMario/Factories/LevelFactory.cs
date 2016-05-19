@@ -44,7 +44,6 @@ namespace NotMario.Factories
 				IEnumerator<XMLLiteNode> enumerator = objectNodes.GetEnumerator ();
 
 				while (enumerator.MoveNext ()) {
-					Console.WriteLine ("Something");
 
 					XMLLiteNode currentObjectNode = enumerator.Current;
 					GameObject currentObject = null;
