@@ -68,8 +68,12 @@
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Physics\PhysicsObject.cs" />
-    <Compile Include="Physics\Basics\BasicRectangle.cs" />
-    <Compile Include="NotMarioGame.cs" />
+    <Compile Include="Physics\Basics\Block.cs" />
+    <Compile Include="NotMarioGame1.cs" />
+    <Compile Include="Games\Levels\Level.cs" />
+    <Compile Include="Games\Elements\GameObject.cs" />
+    <Compile Include="Utility\DataReader.cs" />
+    <Compile Include="Utility\XMLLiteNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
@@ -79,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="Content\Levels\Level1.level">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
@@ -88,5 +95,10 @@
   <ItemGroup>
     <Folder Include="Physics\" />
     <Folder Include="Physics\Basics\" />
+    <Folder Include="Games\" />
+    <Folder Include="Games\Levels\" />
+    <Folder Include="Games\Elements\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Content\Levels\" />
   </ItemGroup>
 </Project>

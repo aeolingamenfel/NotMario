@@ -1,12 +1,26 @@
-﻿#----------------------------- Global Properties ----------------------------#
+
+#----------------------------- Global Properties ----------------------------#
 
 /outputDir:bin/$(Platform)
 /intermediateDir:obj/$(Platform)
+/platform:Windows
 /config:
 /profile:Reach
 /compress:False
 
 #-------------------------------- References --------------------------------#
 
+/reference:../../LevelImporter/bin/Debug/LevelImporter.dll
 
 #---------------------------------- Content ---------------------------------#
+
+#begin Fred.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Fred.xml
+
+#begin Level1.level
+/importer:
+/processor:
+/build:Level1.level
+

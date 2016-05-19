@@ -4,14 +4,15 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using NotMario.Physics.Basics;
+using NotMario.Games.Elements;
 
 namespace NotMario.Physics.Basics
 {
-	public class BasicRectangle : PhysicsObject
+	public class Block : GameObject
 	{
 		protected Texture2D texture;
 
-		public BasicRectangle (GraphicsDevice graphics) 
+		public Block (GraphicsDevice graphics) 
 			: base(10, 10){
 			this.position = new Vector2 (10.0F, 10.0F);
 			this.texture = new Texture2D (graphics, 10, 10);
@@ -19,7 +20,7 @@ namespace NotMario.Physics.Basics
 			this.buildColor (Color.Red);
 		}
 
-		public BasicRectangle (Color color, GraphicsDevice graphics) 
+		public Block (Color color, GraphicsDevice graphics) 
 			: base(10, 10){
 			this.position = new Vector2 (10.0F, 10.0F);
 			this.texture = new Texture2D (graphics, 10, 10);
@@ -27,17 +28,19 @@ namespace NotMario.Physics.Basics
 			this.buildColor (color);
 		}
 
-		public BasicRectangle (float x, float y, int width, int height, GraphicsDevice graphics) 
+		public Block (float x, float y, int width, int height, GraphicsDevice graphics) 
 			: base(width, height){
-			this.position = new Vector2 (x, y);
+			this.position.X = x;
+			this.position.Y = y;
 			this.texture = new Texture2D (graphics, width, height);
 
 			this.buildColor (Color.Red);
 		}
 
-		public BasicRectangle (float x, float y, int width, int height, Color color, GraphicsDevice graphics) 
+		public Block (float x, float y, int width, int height, Color color, GraphicsDevice graphics) 
 			: base(width, height){
-			this.position = new Vector2 (x, y);
+			this.position.X = x;
+			this.position.Y = y;
 			this.texture = new Texture2D (graphics, width, height);
 
 			this.buildColor (color);
@@ -57,11 +60,11 @@ namespace NotMario.Physics.Basics
 			this.texture.SetData<Color> (colorMap);
 		}
 
-		public void Draw(SpriteBatch batch){
-			batch.Draw (this.texture, destinationRectangle: this.drawRect, rotation: this.rotation);
+		public override void Draw(SpriteBatch batch){
+			batch.Draw (this.texture, position: this.position, rotation: this.rotation);
 		}
 
-		public void Dispose(){
+		public override void Dispose(){
 			this.texture.Dispose ();
 		}
 	}

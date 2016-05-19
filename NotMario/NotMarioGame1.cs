@@ -1,24 +1,29 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 
 using NotMario.Physics.Basics;
+using NotMario.Games.Levels;
+using NotMario.Utility;
 
 namespace NotMario
 {
 	/// <summary>
 	/// This is the main type for your game.
 	/// </summary>
-	public class NotMarioGame : Game
+	public class NotMarioGame1 : Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		BasicRectangle rect;
+		Level myLevel;
 
-		public NotMarioGame ()
+		public NotMarioGame1 ()
 		{
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";
@@ -35,12 +40,17 @@ namespace NotMario
 		/// </summary>
 		protected override void Initialize ()
 		{
-			rect = new BasicRectangle (Color.Purple, this.GraphicsDevice);
+			// File reader test
+			DataReader reader = new DataReader ("Content/Levels/level1.level");
+
+			Console.WriteLine(reader.data ["name"]._value);
 
 			// Setup
-			rect.speed.X = 5f;
-			rect.speed.Y = 5f;
-			rect.rotationSpeed = 1f;
+			myLevel = new Level ();
+
+			Block rect = new Block (Color.Purple, this.GraphicsDevice);
+
+			myLevel.addObject (rect);
             
 			base.Initialize ();
 		}
@@ -76,7 +86,7 @@ namespace NotMario
 				#endif
             
 				// Move the rectangle right slowly
-				rect.Update(gameTime);
+				//rect.Update(gameTime);
 
 				base.Update (gameTime);
 			}
@@ -84,7 +94,7 @@ namespace NotMario
 		}
 
 		protected override void UnloadContent(){
-			rect.Dispose ();
+			myLevel.Dispose ();
 
 			Content.Unload ();
 		}
@@ -100,7 +110,7 @@ namespace NotMario
 			// Sprite Drawing
 			this.spriteBatch.Begin();
 
-			rect.Draw (this.spriteBatch);
+			myLevel.Draw (this.spriteBatch);
 
 			this.spriteBatch.End ();
             
