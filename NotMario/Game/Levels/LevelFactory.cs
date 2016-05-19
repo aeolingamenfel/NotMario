@@ -18,14 +18,22 @@ namespace NotMario.Game.Levels
 		/// <returns>The level.</returns>
 		/// <param name="levelName">Level name.</param>
 		public static Level loadLevel(string levelName){
+			XMLLiteNode nameNode;
+			XMLLiteNode blocksNode;
+
 			Level output = new Level ();
 			DataReader reader = new DataReader (LEVEL_FOLDER + levelName + ".level");
 
 			// Load Name
-			if (reader.data.ContainsKey ("name")) {
-				output.name = reader.data ["name"].GetValue ();
+			if (reader.data.TryGetValue ("name", out nameNode)) {
+				output.name = nameNode.GetValue ();
 			} else {
 				Console.WriteLine ("WARNING: Level file \"" + levelName + "\" does not have a 'name' attribute.");
+			}
+
+			// Load Blocks
+			if (reader.data.TryGetValue ("blocks", out blocksNode)) {
+
 			}
 
 			return output;

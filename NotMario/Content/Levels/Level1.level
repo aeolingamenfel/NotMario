@@ -1,2 +1,5 @@
 ﻿<name>Level 1</name>
 <order>0</order>
+<objects data="list">
+	<object type="block"></object>
+</objects>
