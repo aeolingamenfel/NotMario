@@ -74,6 +74,7 @@
     <Compile Include="Utility\XMLLiteNode.cs" />
     <Compile Include="Game\Levels\Level.cs" />
     <Compile Include="Game\Elements\GameObject.cs" />
+    <Compile Include="Game\Levels\LevelFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />

@@ -12,8 +12,11 @@ namespace NotMario.Game.Levels
 	{
 		protected List<GameObject> objects;
 
+		public string name;
+
 		public Level (){
 			this.objects = new List<GameObject> ();
+			this.name = "[empty name]";
 		}
 
 		public void addObject(GameObject gameObject){

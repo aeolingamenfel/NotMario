@@ -21,10 +21,14 @@ namespace NotMario
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		Level myLevel;
+		Level currentLevel;
+
+		string currentLevelName;
 
 		public NotMarioGame1 ()
 		{
+			currentLevelName = "Level1";
+
 			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";
 
@@ -41,16 +45,16 @@ namespace NotMario
 		protected override void Initialize ()
 		{
 			// File reader test
-			DataReader reader = new DataReader ("Content/Levels/level1.level");
+			Level loadedLevel = LevelFactory.loadLevel(this.currentLevelName);
 
-			Console.WriteLine(reader.data ["name"].GetValue());
+			Console.WriteLine ("Name: " + loadedLevel.name);
 
 			// Setup
-			myLevel = new Level ();
+			currentLevel = new Level ();
 
 			Block rect = new Block (Color.Purple, this.GraphicsDevice);
 
-			myLevel.addObject (rect);
+			currentLevel.addObject (rect);
             
 			base.Initialize ();
 		}
@@ -94,7 +98,7 @@ namespace NotMario
 		}
 
 		protected override void UnloadContent(){
-			myLevel.Dispose ();
+			currentLevel.Dispose ();
 
 			Content.Unload ();
 		}
@@ -110,7 +114,7 @@ namespace NotMario
 			// Sprite Drawing
 			this.spriteBatch.Begin();
 
-			myLevel.Draw (this.spriteBatch);
+			currentLevel.Draw (this.spriteBatch);
 
 			this.spriteBatch.End ();
             
