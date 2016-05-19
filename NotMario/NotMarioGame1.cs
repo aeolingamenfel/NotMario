@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 
 using NotMario.Physics.Basics;
-using NotMario.Games.Levels;
+using NotMario.Game.Levels;
 using NotMario.Utility;
 
 namespace NotMario
@@ -17,7 +17,7 @@ namespace NotMario
 	/// <summary>
 	/// This is the main type for your game.
 	/// </summary>
-	public class NotMarioGame1 : Game
+	public class NotMarioGame1 : Microsoft.Xna.Framework.Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;

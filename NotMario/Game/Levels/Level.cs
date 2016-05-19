@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-using NotMario.Games.Elements;
+using NotMario.Game.Elements;
 
-namespace NotMario.Games.Levels
+namespace NotMario.Game.Levels
 {
 	public class Level
 	{

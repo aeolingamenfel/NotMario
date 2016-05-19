@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 using NotMario.Physics;
 
-namespace NotMario.Games.Elements
+namespace NotMario.Game.Elements
 {
 	public abstract class GameObject : PhysicsObject
 	{

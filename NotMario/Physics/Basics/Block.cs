@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using NotMario.Physics.Basics;
-using NotMario.Games.Elements;
+using NotMario.Game.Elements;
 
 namespace NotMario.Physics.Basics
 {

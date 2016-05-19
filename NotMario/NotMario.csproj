@@ -70,10 +70,10 @@
     <Compile Include="Physics\PhysicsObject.cs" />
     <Compile Include="Physics\Basics\Block.cs" />
     <Compile Include="NotMarioGame1.cs" />
-    <Compile Include="Games\Levels\Level.cs" />
-    <Compile Include="Games\Elements\GameObject.cs" />
     <Compile Include="Utility\DataReader.cs" />
     <Compile Include="Utility\XMLLiteNode.cs" />
+    <Compile Include="Game\Levels\Level.cs" />
+    <Compile Include="Game\Elements\GameObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
@@ -95,10 +95,10 @@
   <ItemGroup>
     <Folder Include="Physics\" />
     <Folder Include="Physics\Basics\" />
-    <Folder Include="Games\" />
-    <Folder Include="Games\Levels\" />
-    <Folder Include="Games\Elements\" />
     <Folder Include="Utility\" />
     <Folder Include="Content\Levels\" />
+    <Folder Include="Game\" />
+    <Folder Include="Game\Levels\" />
+    <Folder Include="Game\Elements\" />
   </ItemGroup>
 </Project>
