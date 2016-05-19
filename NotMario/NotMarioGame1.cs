@@ -43,7 +43,7 @@ namespace NotMario
 			// File reader test
 			DataReader reader = new DataReader ("Content/Levels/level1.level");
 
-			Console.WriteLine(reader.data ["name"]._value);
+			Console.WriteLine(reader.data ["name"].GetValue());
 
 			// Setup
 			myLevel = new Level ();

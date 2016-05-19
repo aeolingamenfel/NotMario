@@ -20,6 +20,10 @@ namespace NotMario.Utility{
 			this.lists = new Dictionary<string, List<XMLLiteNode>> ();
 		}
 
+		public string GetValue(){
+			return this._value;
+		}
+
 		public bool HasChild(string childName)
 		{
 			return this.children.ContainsKey (childName);
