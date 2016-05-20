@@ -11,6 +11,7 @@ namespace NotMario.Physics.Basics
 	public class Block : GameObject
 	{
 		protected Texture2D texture;
+		protected Color color = new Color(0, 0, 0);
 
 		public Block (GraphicsDevice graphics) 
 			: base(10, 10){
@@ -46,9 +47,27 @@ namespace NotMario.Physics.Basics
 			this.buildColor (color);
 		}
 
+		public override void SetWidth(int newValue){
+			base.SetWidth (newValue);
+
+			this.buildColor (this.color);
+		}
+
+		public override void SetHeight(int newValue){
+			base.SetHeight (newValue);
+
+			this.buildColor (this.color);
+		}
+
+		public void SetColor(Color color){
+			this.buildColor (color);
+		}
+
 		protected void buildColor(Color color){
-			int x = this.texture.Bounds.Height;
-			int y = this.texture.Bounds.Width;
+			this.color = color;
+
+			int x = (int)this.dimensions.X;
+			int y = (int)this.dimensions.Y;
 			int dimension = x * y;
 
 			Color[] colorMap = new Color[dimension];
