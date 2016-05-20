@@ -15,23 +15,7 @@ namespace NotMario.Factories
 
 		public static Block BuildBlockFromNode(XMLLiteNode node, GraphicsDevice graphics){
 			Block output = new Block (graphics);
-	
-			// TODO: extra building
-			/*node.children["X"]. ("X" , out output.position.X)
 
-			if (node.TryGetValue  ){
-				output.postion.Y = val
-			}
-			if (node.TryGetValue){
-				output.buidColor = ValueType
-
-			}
-			if (node.TryGetValue){
-				output.texture.Bounds.Width = val
-			}
-			if (node.TryGetValue){
-				oupput.texture.Bounds.Height = val
-			}*/
 			string childVal;
 			if (node.HasChild("color")){
 				XMLLiteNode colorNode = node.children["color"];
