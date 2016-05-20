@@ -1,5 +1,18 @@
 ﻿<name>Level 1</name>
 <order>0</order>
 <objects data="list">
-	<object type="block"></object>
+	<object type="block">
+		<color r="0" b="0" g="255"> </color>
+		<X> 15 </X>
+		<Y> 30 </Y>
+		<width> 10 </width>
+		<height> 10 </height>
+	</object>
+	<object type="block">
+		<color r="255" b="0" g="0"></color>
+		<X> 50 </X>
+		<Y> 50 </Y>
+		<width> 20 </width>
+		<height> 20 </height>
+	</object>
 </objects>
