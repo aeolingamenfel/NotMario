@@ -51,7 +51,7 @@ namespace NotMario
 			this.dimensions.Y = (newValue * Level.GRID_SIZE);
 		}
 
-		public void Update(GameTime gameTime){
+		public virtual void Update(GameTime gameTime){
 			float fraction = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
 			this.position.X += this.speed.X * fraction;
