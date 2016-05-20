@@ -47,11 +47,15 @@ namespace NotMario.Factories
 			
 			childVal = node.GetChildValue ("X");
 			if (!childVal.Equals(string.Empty)) {
-				output.position.X = float.Parse(childVal);
+				float val = float.Parse (childVal);
+
+				output.SnapXToGrid (val);
 			}
 			childVal = node.GetChildValue ("Y");
 			if (!childVal.Equals(string.Empty)) {
-				output.position.Y = float.Parse(childVal);
+				float val = float.Parse (childVal);
+
+				output.SnapYToGrid (val);
 			}
 
 			childVal = node.GetChildValue ("width");

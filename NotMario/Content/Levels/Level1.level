@@ -3,16 +3,16 @@
 <objects data="list">
 	<object type="block">
 		<color r="0" b="0" g="255"> </color>
-		<X> 15 </X>
-		<Y> 30 </Y>
-		<width> 10 </width>
-		<height> 10 </height>
+		<X> 1 </X>
+		<Y> 1 </Y>
+		<width> 1 </width>
+		<height> 1 </height>
 	</object>
 	<object type="block">
 		<color r="255" b="0" g="0"></color>
-		<X> 50 </X>
-		<Y> 50 </Y>
-		<width> 100 </width>
-		<height> 100 </height>
+		<X> 3 </X>
+		<Y> 3 </Y>
+		<width> 2 </width>
+		<height> 2 </height>
 	</object>
 </objects>
