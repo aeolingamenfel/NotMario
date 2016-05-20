@@ -13,10 +13,12 @@ namespace NotMario.Physics.Basics
 		protected Texture2D texture;
 		protected Color color = new Color(0, 0, 0);
 
+		protected GraphicsDevice graphics;
+
 		public Block (GraphicsDevice graphics) 
 			: base(10, 10){
 			this.position = new Vector2 (10.0F, 10.0F);
-			this.texture = new Texture2D (graphics, 10, 10);
+			this.graphics = graphics;
 
 			this.buildColor (Color.Red);
 		}
@@ -24,7 +26,7 @@ namespace NotMario.Physics.Basics
 		public Block (Color color, GraphicsDevice graphics) 
 			: base(10, 10){
 			this.position = new Vector2 (10.0F, 10.0F);
-			this.texture = new Texture2D (graphics, 10, 10);
+			this.graphics = graphics;
 
 			this.buildColor (color);
 		}
@@ -33,7 +35,8 @@ namespace NotMario.Physics.Basics
 			: base(width, height){
 			this.position.X = x;
 			this.position.Y = y;
-			this.texture = new Texture2D (graphics, width, height);
+
+			this.graphics = graphics;
 
 			this.buildColor (Color.Red);
 		}
@@ -42,7 +45,8 @@ namespace NotMario.Physics.Basics
 			: base(width, height){
 			this.position.X = x;
 			this.position.Y = y;
-			this.texture = new Texture2D (graphics, width, height);
+
+			this.graphics = graphics;
 
 			this.buildColor (color);
 		}
@@ -64,10 +68,13 @@ namespace NotMario.Physics.Basics
 		}
 
 		protected void buildColor(Color color){
-			this.color = color;
-
 			int x = (int)this.dimensions.X;
 			int y = (int)this.dimensions.Y;
+
+			this.texture = new Texture2D (this.graphics, x, y);
+			this.color = color;
+
+
 			int dimension = x * y;
 
 			Color[] colorMap = new Color[dimension];
